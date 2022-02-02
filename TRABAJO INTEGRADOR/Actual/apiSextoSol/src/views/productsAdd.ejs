@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product add</title>
+    <link rel='stylesheet' href='/css/style.css' />
+</head>
+
+<body>
+    <figure>
+        <img src="/img/logo-SextoSol.png" alt="Logo Sexto Sol">
+      </figure>
+    <h1 class="titulo">Agregar Producto</h1>
+    <br>
+    <section class="formulario">
+        <form action="/products/create" method="POST">
+            <label for="name">Nombre </label>
+            <p><input type="text" name="name" id="" value="<%= Product.name %>" required></p>
+            <label for="price">Precio </label>
+            <p><input type="number" name="price" id="" value="<%= Product.price %>" required></p>
+            <label for="description">Descripción </label>
+            <p><input type="number" name="description" id="" value="<%= Product.description %>" required></p>
+            <label for="purchase_date">Fecha de compra </label>
+            <p><input type="date" name="purchase_date" id="" value="<%= Product.purchase_date %> required"></p>
+            <label for="categoryID">Categoría </label>
+            <p>
+                <select name="category_id" id="" required>
+                    <option value="" disabled selected>- Seleccione la categoría - </option>
+                    <% allCategories.forEach(genre => { %>
+                    <option value="<%= category.id %>"><%= category.name %></option>
+                    <% }); %>
+                </select>
+            </p>
+            <br>
+            <p> <button class="botonAgregar" type="submit">Agregar</button>
+            
+            <a  class="botonVolver" href="/products">Listado de Productos</a></p>
+        </form>
+    </section>
+    
+</body>
+
+</html>

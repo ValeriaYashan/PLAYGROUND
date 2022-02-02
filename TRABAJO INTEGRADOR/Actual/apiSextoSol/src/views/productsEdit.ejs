@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="titulo">Editar Productos</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <figure>
+        <img src="/img/logo-SextoSol.png" alt="Logo Sexto Sol">
+      </figure>
+    <h1 class="titulo">Producto Editado:  <%= Product.name %></h1>
+    <section class="formulario">
+        <form action="/products/update/<%= Product.id %>?_method=PUT" method="POST">
+            <label for="name">Nombre </label>
+            <p><input type="text" name="name" id="" value="<%= Product.name %>" required></p>
+            <label for="price">Precio </label>
+            <p><input type="number" name="price" id="" value="<%= Product.price %>" required></p>
+            <label for="description">Descripción </label>
+            <p><input type="number" name="description" id="" value="<%= Product.description %>" required></p>
+            <label for="purchase_date">Fecha de compra </label>
+            <p><input type="date" name="purchase_date" id="" value="<%= Product.purchase_date %> required"></p>
+            
+            <label for="category_id">Categoría</label>
+            <p>
+                <select name="category_id" id="" required>
+                    <% allCategories.forEach(category => { %>
+                    <option value="<%= category.id %>" <% if (Product.category.id == category.id) { %><%= 'selected' %><% }; %>><%= genre.name %></option>
+                    <% }); %>
+                </select>
+            </p>
+
+    <!--
+            <label for="category_id">Category ID </label>
+            <p><input type="number" name="category_id" id="" value="<%= Product.category_id %>"></p>
+        -->
+            
+            <br>
+            <p> <button class="botonAgregar" type="submit">Actualizar</button>
+        
+            <a  class="botonVolver" href="/movies">Listado de Productos</a></p>
+        </form>
+    </section>
+</body>
+
+</html>

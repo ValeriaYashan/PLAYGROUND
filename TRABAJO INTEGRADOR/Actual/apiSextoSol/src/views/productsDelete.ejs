@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrado del Producto</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <figure>
+        <img src="/img/logo-SextoSol.png" alt="Logo Sexto Sol">
+      </figure>
+    <h1>Estas seguro de querer borrar este producto: <%= Product.name %>???</h1>
+    <p>
+        <form action="/products/delete/<%= Product.id %>?_method=PUT" method="POST">
+            <br>
+            <p> <button class="botonBorrar" type="submit">Borrar el Producto</button>
+            
+            <a  class="botonVolver" href="/products">Listado de Productos</a></p>
+
+        </form>
+    </p>
+    
+</body>
+
+</html>

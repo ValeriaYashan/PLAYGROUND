@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantas ordenadas por precio</title>
+    <link rel='stylesheet' href='/css/style.css' />
+</head>
+<body>
+    <figure>
+        <img src="/img/logo-SextoSol.png" alt="Logo Sexto Sol">
+    </figure>
+    <h1>PEÍCULAS ORDENADAS POR PRECIO</h1>
+    <ul>
+        <% for( let i = 0; i < products.length; i++ ) { %>
+        <li>
+            <a href="/products/detail/<%=products[i].id%>"><%= products[i].name %> </a> <br>
+            <%= 'PRECIO: ' + products[i].precio %> 
+        </li>
+        <% } %>
+        
+    </ul>
+</body>
+</html>

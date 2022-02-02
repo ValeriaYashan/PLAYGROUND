@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>listado de Categorias</title>
+    <link rel='stylesheet' href='/css/style.css' />
+
+</head>
+
+<body>
+    <figure>
+        <img src="/img/logo-SextoSol.png" alt="Logo Sexto Sol">
+      </figure>
+    <h1>LISTADO DE CATEGORIAS</h1>
+    <ul>
+        <% for( let i = 0; i < categories.length; i++ ) { %>
+        <li>
+            <a href="/categories/detail/<%= cateogories[i].id %>"><%= categories[i].name %></a>
+        </li>
+        <% } %>
+
+    </ul>
+</body>
+
+</html>
